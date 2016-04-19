@@ -1,0 +1,17 @@
+selenium-hub:
+  container_name: selenium-hub
+  image: selenium/hub
+  ports:
+    - 4444:4444
+
+firefox-ja:
+  container_name: firefox-ja
+  image: yuta/selenium-node-firefox-ja
+  links:
+    - selenium-hub:hub
+
+chrome-ja:
+  container_name: chrome-ja
+  image: yuta/selenium-node-chrome-ja
+  links:
+    - selenium-hub:hub
